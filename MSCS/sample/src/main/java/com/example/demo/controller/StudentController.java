@@ -54,6 +54,18 @@ public class StudentController {
         return "index";
     }
 
+    @RequestMapping(value = "/login",method = RequestMethod.GET)
+    public String login(Model model){
+        return "login";
+    }
+
+    @RequestMapping(value = "/createUser",method = RequestMethod.GET)
+    public String createUser(Model model){
+        return "createUser";
+    }
+
+
+
 
 
 }
