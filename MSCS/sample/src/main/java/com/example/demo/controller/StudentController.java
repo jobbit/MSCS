@@ -1,7 +1,11 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.Student;
+import com.example.demo.entity.User;
+
 import com.example.demo.service.StudentService;
+import com.example.demo.service.UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,6 +32,16 @@ public class StudentController {
         List<Student> list = studentService.getAllStudent();
         request.setAttribute("students",list);
         return "student";
+    }
+
+    @Autowired
+    private UserService userService;
+
+    @RequestMapping(value = "/stu/getAllUser",method = RequestMethod.GET)
+    public String getAllUser(HttpServletRequest request){
+        List<User> list = userService.getAllUser();
+        request.setAttribute("user",list);
+        return "user";
     }
 
     @RequestMapping(value = "/stu/insert",method = RequestMethod.GET)

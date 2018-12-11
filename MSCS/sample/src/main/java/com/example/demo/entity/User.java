@@ -10,18 +10,18 @@ import lombok.Data;
 @Data
 public class User {
 
-    private Integer pid;
+    private Integer id;
     private String password;
     private String gender;
     private String phone;
     private String authority;
 
-    public Integer getPid() {
-        return pid;
+    public Integer getId() {
+        return id;
     }
 
-    public void setPid(Integer pid) {
-        this.pid = pid;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getPassword() {
