@@ -34,6 +34,18 @@ public class UserServiceImpl implements UserService {
         userDAO.insert(user);
         return true;
     }
+
+    @Override
+    public boolean dologin(User user)
+    {
+        System.out.println(this.userDAO.logincheck());
+
+        if(null == this.userDAO.logincheck() || this.userDAO.logincheck().size() ==0 ){
+            return true;
+        }else{
+            return false;
+        }
+    }
 //
 //    @Override
 //    public boolean update(Integer id, Double score) {

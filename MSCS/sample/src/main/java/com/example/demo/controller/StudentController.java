@@ -58,6 +58,12 @@ public class StudentController {
         return "redirect:/getAllUser";
     }
 
+    @RequestMapping(value = "/loginaction",method = RequestMethod.GET)
+    public String loginaction(User user,Model model){
+        userService.dologin(user);
+        return "redirect:/getAllUser";
+    }
+
 
     @RequestMapping(value = "/stu/update",method = RequestMethod.GET)
     public String update(Model model){
@@ -87,21 +93,6 @@ public class StudentController {
         model.addAttribute("user",new User());
         return "createUser";
     }
-
-//    @RequestMapping(value = "/user/login",method = RequestMethod.GET)
-//    public String logincheck(Model model){
-//
-//        if(usercheck == 1){
-//            return "index";
-//        }
-//        else{
-//            return "error";
-//        }
-//
-//    }
-
-
-
 
 
 }

@@ -19,11 +19,12 @@ public interface UserDAO {
     @Select(value = "SELECT * FROM user")
     List<User> getAllUser();
 
-    @Insert(value = "INSERT INTO user(user.`id`,user.`password`,user.`name`,user.'gender',user.'phone',user.'authority')\n" +
-            "VALUES(#{id},#{password},#{name},#{gender},#{phone},#{authority})")
+    @Insert({"insert into user(id,password,name,gender,phone,authority) values(#{id},#{password},#{name},#{gender},#{phone},#{authority})"})
+
     int insert(User user);
 
-//    @Select(value = "SELECT * FROM user")
+    @Select({"select * from users where username=User.getUsername() and password =User.getPassword()"})
+    List<User> logincheck();
 
 //
 //    @Update(value = "UPDATE user SET user.score = #{score} WHERE user.pid = #{pid}")

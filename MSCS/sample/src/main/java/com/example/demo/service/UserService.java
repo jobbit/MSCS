@@ -16,6 +16,8 @@ public interface UserService {
 
     boolean insert(User user);
 
+    boolean dologin(User user);
+
 //    boolean update(Integer id, Double score);
 
 }

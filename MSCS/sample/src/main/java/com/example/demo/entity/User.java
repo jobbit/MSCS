@@ -11,6 +11,7 @@ import lombok.Data;
 public class User {
 
     private Integer id;
+    private String username;
     private String password;
     private String name;
     private String gender;
@@ -19,6 +20,14 @@ public class User {
 
     public Integer getId() {
         return id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public void setId(Integer id) {

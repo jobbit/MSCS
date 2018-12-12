@@ -9,6 +9,8 @@
 <form id="iform" th:action="@{/register}" th:method="get" th:object="${user}">
     <label>账号</label>
     <input type="text" th:field="*{id}"/>
+    <label>账户名</label>
+    <input type="text" th:field="*{username}"/>
     <label>密码</label>
     <input type="text" th:field="*{password}"/>
     <label>姓名</label>

@@ -18,4 +18,5 @@ public interface StudentService {
 
     boolean update(Integer id,Double score);
 
+
 }
