@@ -24,6 +24,8 @@ import java.util.List;
 @Controller
 public class StudentController {
 
+    int usercheck = 0;
+
     @Autowired
     private StudentService studentService;
 
@@ -37,7 +39,7 @@ public class StudentController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/stu/getAllUser",method = RequestMethod.GET)
+    @RequestMapping(value = "/getAllUser",method = RequestMethod.GET)
     public String getAllUser(HttpServletRequest request){
         List<User> list = userService.getAllUser();
         request.setAttribute("user",list);
@@ -49,6 +51,13 @@ public class StudentController {
         studentService.insert(student);
         return "redirect:/stu/getAllStudent";
     }
+
+    @RequestMapping(value = "/register",method = RequestMethod.GET)
+    public String insert(User user,Model model){
+        userService.insert(user);
+        return "redirect:/getAllUser";
+    }
+
 
     @RequestMapping(value = "/stu/update",method = RequestMethod.GET)
     public String update(Model model){
@@ -75,8 +84,21 @@ public class StudentController {
 
     @RequestMapping(value = "/createUser",method = RequestMethod.GET)
     public String createUser(Model model){
+        model.addAttribute("user",new User());
         return "createUser";
     }
+
+//    @RequestMapping(value = "/user/login",method = RequestMethod.GET)
+//    public String logincheck(Model model){
+//
+//        if(usercheck == 1){
+//            return "index";
+//        }
+//        else{
+//            return "error";
+//        }
+//
+//    }
 
 
 

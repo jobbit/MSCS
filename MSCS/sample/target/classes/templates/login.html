@@ -22,6 +22,7 @@
     <!-- Custom CSS -->
     <link th:href="@{/css/sb-admin-2.css}" rel="stylesheet">
 
+
     <!-- Custom Fonts -->
     <link th:href="@{/vendor/font-awesome/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
 
@@ -44,8 +45,8 @@
                         <h3 class="panel-title">请登录</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form">
-                            <fieldset>
+                        <form id="iform" th:action="@{/user/login}" th:method="get" th:object="${user}">
+                        <fieldset>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="username" name="username" type="username"
                                            autofocus>
@@ -71,8 +72,8 @@
 
     <script language="javascript">
         function check() {
-            //alert(document.getElementById("usr").value);
-            //alert(document.getElementById("pwd").value);
+            alert(document.getElementById("username").value);
+            alert(document.getElementById("password").value);
             document.getElementById("login").submit();
         }
     </script>

@@ -25,15 +25,15 @@ public class UserServiceImpl implements UserService {
         return userDAO.getAllUser();
     }
 
-//    @Override
-//    public boolean insert(User user) {
-//        if (null == user){
-//            return false;
-//        }
-//        // do something...
-//        userDAO.insert(user);
-//        return true;
-//    }
+    @Override
+    public boolean insert(User user) {
+        if (null == user){
+            return false;
+        }
+        // do something...
+        userDAO.insert(user);
+        return true;
+    }
 //
 //    @Override
 //    public boolean update(Integer id, Double score) {

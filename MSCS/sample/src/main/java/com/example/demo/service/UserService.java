@@ -14,8 +14,8 @@ public interface UserService {
 
     List<User> getAllUser();
 
-//    boolean insert(User user);
-//
+    boolean insert(User user);
+
 //    boolean update(Integer id, Double score);
 
 }
