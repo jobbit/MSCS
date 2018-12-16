@@ -8,11 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
-* @description 
-* @author Tim Lin
-* @create 2018-07-01 
-**/
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -36,24 +31,20 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public List<User> logincheck() {
+        return userDAO.logincheck();
+    }
+
+    @Override
     public boolean dologin(User user)
     {
+        System.out.print("接口中的logincheck");
         System.out.println(this.userDAO.logincheck());
 
-        if(null == this.userDAO.logincheck() || this.userDAO.logincheck().size() ==0 ){
+        if(this.userDAO.logincheck() != null || this.userDAO.logincheck().size() !=0 ){
             return true;
         }else{
             return false;
         }
     }
-//
-//    @Override
-//    public boolean update(Integer id, Double score) {
-//        if ( null == id || null  == score){
-//            return false;
-//        }
-//        // do something...
-//        userDAO.update(id,score);
-//        return true;
-//    }
 }

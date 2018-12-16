@@ -4,11 +4,6 @@ import com.example.demo.entity.User;
 
 import java.util.List;
 
-/**
-* @description 
-* @author Tim Lin
-* @create 2018-07-01 
-**/
 
 public interface UserService {
 
@@ -16,8 +11,9 @@ public interface UserService {
 
     boolean insert(User user);
 
+    List<User> logincheck();
+
     boolean dologin(User user);
 
-//    boolean update(Integer id, Double score);
 
 }
